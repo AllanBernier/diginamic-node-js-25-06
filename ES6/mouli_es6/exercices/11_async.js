@@ -11,7 +11,7 @@ const { sleep } = require("../exercices/10_promise");
  *    - ne pas utiliser async await
  * 
  */
-const usingThen = {}
+const usingThen = (cb) => sleep().then( () => cb() )
 
 
 /**
@@ -25,7 +25,10 @@ const usingThen = {}
  *   - ne pas utiliser .then
  */
 
-const usingAwait = {}
+const usingAwait = async (cb) => {
+  await sleep()
+  cb()
+}
 
 /**
  * Créez une fonction asynchrone qui effectue un appel api vers l'url passé en paramètre
@@ -42,5 +45,9 @@ const usingAwait = {}
 //décommentez la ligne suivante une fois le package installé
 const axios = require("axios");
 
-const apiResponse = {}
+const apiResponse = async (url) => {
+  const response = await axios.get(url)
+  return response.data
+}
+
 module.exports = { usingThen, usingAwait, apiResponse };

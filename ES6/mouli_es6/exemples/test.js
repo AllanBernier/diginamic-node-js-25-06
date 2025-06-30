@@ -93,3 +93,63 @@
 //   console.log("Arrow function")
 // }
 
+// const a = "Hello"
+// const b = "World"
+
+// const c = a + " " + b + " !"
+
+// const d = `${a} ${b} !`
+
+// const examen = {
+//   title : "Maths",
+//   questions : {
+//     title : "toto"
+//   }
+// }
+
+// console.log(examen?.questions?.title)
+
+
+const wait = (ms) => {
+  return new Promise((resolve, reject) => {
+
+    if (ms > 5000) {
+      return reject({ message: "ms > 5000 :" + ms })
+    }
+
+    setTimeout(() => resolve("Hello !"), ms)
+  })
+}
+
+
+// const usePromesse = () => {
+//   console.log("Start")
+
+//   wait(2000).then((res) => {
+//     console.log(res)
+//   }).catch((err) => {
+//     console.log(err)
+//   })
+
+//   console.log("End")
+// }
+
+// usePromesse()
+
+
+// const useParallel = async () => {
+//   console.log("start")
+
+  
+//   const response = await Promise.all([
+//     wait(2000),
+//     wait(3000),
+//     wait(1000)
+//   ])
+
+//   console.log(response)
+
+//   console.log("end")
+// }
+
+// useParallel()

@@ -79,3 +79,6 @@ app.delete("/products/:id", (req, res) => {
   Products.splice(index, 1)
   res.json({message : "Product Deleted"})
 })
+
+
+

@@ -7,12 +7,14 @@ const index = (req, res) => {
     })
 }
 const show = (req, res) => { 
+
   Product.findByPk()
 }
 const store = (req, res) => {
-  Product.create()
+  Product.create(req.body)
  }
 const update = (req, res) => {
+  
   Product.update()
  }
 const destroy = (req, res) => {

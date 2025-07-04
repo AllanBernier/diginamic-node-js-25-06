@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <table>
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Description</td>
+        <td>Price</td>
+        <td>Stock</td>
+        <td>Actions</td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% products.map( (p) => { %>
+        <tr>
+          <td><%= p.id %></td>
+          <td><%= p.name %></td>
+          <td><%= p.description %></td>
+          <td><%= p.stock %></td>
+          <td><%= p.price %></td>
+          <td>
+            <form action="/products/<%=p.id%>/delete" method="post">
+              <button type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+
+      <% }) %>
+
+    </tbody>
+
+
+  </table>
+</body>
+</html>
